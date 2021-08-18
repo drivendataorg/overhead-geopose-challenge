@@ -1,2 +1,34 @@
-# overhead-geopose-challenge
-Winners of DrivenData's Overhead Geopose Challenge
+[<img src='https://s3.amazonaws.com/drivendata-public-assets/logo-white-blue.png' width='600'>](https://www.drivendata.org/)
+<br><br>
+
+![Banner Image](https://drivendata-public-assets.s3.amazonaws.com/geopose-homepage.png)
+<figcaption>Images shown are from the public <a href="https://ieee-dataport.org/open-access/urban-semantic-3d-dataset">Urban Semantic 3D Dataset</a>, provided courtesy of DigitalGlobe</figcaption>
+
+# <Overhead Geopose Challenge>
+
+## Goal of the Competition
+
+Overhead satellite imagery provides critical time-sensitive information for use areas like disaster response, navigation, and security. Most current methods for using aerial imagery assume images are taken from directly overhead, or “near-nadir”. However, the first images available are often taken from an angle, or are “oblique”. Effects from these camera orientations complicate useful tasks like change detection, vision-aided navigation, and map alignment.
+
+In this challenge, participants made satellite imagery taken from a significant angle more useful for time-sensitive applications like disaster and emergency response
+
+## What's in this Repository
+
+This repository contains code from winning competitors in the [Overhead Geopose Challenge](https://www.drivendata.org/competitions/78/overhead-geopose-challenge/).
+
+**Winning code for other DrivenData competitions is available in the [competition-winners repository](https://github.com/drivendataorg/competition-winners).**
+
+## Winning Submissions
+
+All of the models below are based on the solution provided in the benchmark blog post: **["Overhead Geopose Challenge - Benchmark"](https://www.drivendata.co/blog/overhead-geopose-benchmark/)**
+
+Place |Team or User | Public Score | Private Score | Summary of Model
+--- | --- | ---   | ---   | ---
+1   | selim_sef	| 0.902459	| 0.902184| An EfficientNet V2 L encoder is used instead of the Resnet34 encoder because it has a huge capacity and is less prone to overfitting. The decoder is a UNet with more filters and additional convolution blocks for better handling of fine grained details. MSE loss would produce imbalance for different cities, depending on building heights. The model is trained with an R2 loss for AGL/MAG outputs, which reflects the final competition metric and is more robust to noisy training data.
+2   | o__@	| 0.882801	| 0.882882	| I ensembled the VFlow-UNet model using a large input resolution and a large backbone without downsampling. Better results were obtained when the model was trained on all images from the training set. The test set contains images of the same location as the images in the training set. This overlap was identified by image matching to improve the prediction results.
+3   | kbrodt	| 0.873057	| 0.872775	| The model uses a UNet architecture with various encoders (efficientnet-b{6,7} and senet154), and has only one above ground level (AGL) head and two heads in the bottleneck for scale and angle. The features are a random 512x512 crop of an aerial image, the city's one hot encoding, and ground sample distance (GSD). The model is trained with mean squared error (MSE) loss function for all targets (AGL, scale, angle) using AdamW optimizer with 1e-4 learning rate.
+
+
+Additional solution details can be found in the `reports` folder inside the directory for each submission.
+
+
