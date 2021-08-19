@@ -32,8 +32,6 @@ All of the models below are based on the solution provided in the benchmark blog
 | 4     | kbrodt       | 0.872775     | 0.873057      | The model uses a UNet architecture with various encoders (efficientnet-b{6,7} and senet154), and has only one above ground level (AGL) head and two heads in the bottleneck for scale and angle. The features are a random 512x512 crop of an aerial image, the city's one hot encoding, and ground sample distance (GSD). The model is trained with mean squared error (MSE) loss function for all targets (AGL, scale, angle) using AdamW optimizer with 1e-4 learning rate.                      |
 
 
-Additional solution details can be found in the `reports` folder inside the directory for each submission.
-
 ### Model Write-up Bonus
 
 | Team or User | Public Score | Private Score | Summary of Model                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
