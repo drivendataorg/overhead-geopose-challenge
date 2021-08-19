@@ -1,0 +1,14 @@
+*.bak
+*.pyc
+*.tif
+*.png
+*.pdf
+*.jpeg
+*.jpg
+*.html
+*.so
+*.npy
+*.npz
+utilities/build/*
+submission*
+

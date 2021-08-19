@@ -1,0 +1,75 @@
+{
+  "network": "TimmUnet",
+  "encoder_params": {
+    "encoder": "tf_efficientnetv2_l_in21k",
+    "drop_path_rate": 0.2
+  },
+  "optimizer": {
+        "train_bs": 4,
+        "val_bs": 2,
+        "type": "AdamW",
+        "weight_decay": 1e-2,
+        "learning_rate": 0.0001,
+        "schedule": {
+            "type": "cosine",
+            "mode": "step",
+            "epochs": 100,
+            "params": {
+                "T_max": 133000,
+                "eta_min": 5e-6
+            }
+        }
+    },
+   "losses": [
+      {
+        "name": "scale",
+        "type": "MSEScaleLossCalculator",
+        "weight": 20.0,
+        "display": true,
+        "params": {}
+      },
+       {
+        "name": "angle",
+        "type": "MSEAngleLossCalculator",
+        "weight": 2.0,
+        "display": true,
+        "params": {
+        }
+      },
+
+     {
+        "name": "agl",
+        "type": "NoNaNR2AGLLossCalculator",
+        "weight": 1.0,
+        "display": true,
+        "params": {
+        }
+      },
+     {
+        "name": "mag",
+        "type": "NoNaNR2MAGLossCalculator",
+        "weight": 1.0,
+        "display": true,
+        "params": {
+        }
+      },
+     {
+        "name": "fagl",
+        "type": "FocalAGLLossCalculator",
+        "weight": 0.05,
+       "display": true,
+        "params": {
+        }
+      },
+     {
+        "name": "fmag",
+        "type": "FocalMAGLossCalculator",
+        "weight": 0.05,
+        "display": true,
+        "params": {
+        }
+      }
+
+   ]
+
+}
