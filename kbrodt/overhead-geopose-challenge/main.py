@@ -12,7 +12,6 @@ def str2bool(v):
 
     raise argparse.ArgumentTypeError("Bool value expected")
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -127,8 +126,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--load", type=str, default="", help="path to pretrained model weights"
     )
-    parser.add_argument("--model-pt", nargs="+", type=str)
-    parser.add_argument("--use-cities", nargs="+", type=str2bool)
+    parser.add_argument('--model-pt', nargs="+", type=str)
+    parser.add_argument('--use-cities', nargs="+", type=str2bool)
     parser.add_argument(
         "--resume",
         action="store_true",
@@ -139,12 +138,8 @@ if __name__ == "__main__":
         "--channels-last", action="store_true", help="Use channels_last memory layout"
     )
     parser.add_argument("--prefetch", action="store_true", help="Use prefetching")
-    parser.add_argument(
-        "--test-rgb-path", type=str, default=None, help="path to rgb test files"
-    )
-    parser.add_argument(
-        "--pl-dir", type=str, default=None, help="path to predicted test files"
-    )
+    parser.add_argument("--test-rgb-path", type=str, default=None, help="path to rgb test files")
+    parser.add_argument("--pl-dir", type=str, default=None, help="path to predicted test files")
     parser.add_argument("--city", type=str, default=None, help="city name")
     parser.add_argument(
         "--use-city", action="store_true", help="Use city ohe in decoder"
