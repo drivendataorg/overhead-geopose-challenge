@@ -20,6 +20,8 @@ This repository contains code from winning competitors in the [Overhead Geopose 
 
 ## Winning Submissions
 
+### Prediction Contest
+
 All of the models below are based on the solution provided in the benchmark blog post: **["Overhead Geopose Challenge - Benchmark"](https://www.drivendata.co/blog/overhead-geopose-benchmark/)**
 
 | Place | Team or User | Public Score | Private Score | Summary of Model                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -31,5 +33,16 @@ All of the models below are based on the solution provided in the benchmark blog
 
 
 Additional solution details can be found in the `reports` folder inside the directory for each submission.
+
+### Model Write-up Bonus
+
+| Team or User | Public Score | Private Score | Summary of Model                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ------------ | ------------ | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| bloodaxe     | 0.889567     | 0.890993      | See the "Prediction Contest" section above                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| chuchu       | 0.856847     | 0.855636      | We conducted an empirical upper bound analysis, which suggested that the main errors are from height prediction and the rest are from angle prediction. To overcome the bottlenecks we proposed HR-VFLOW, which takes HRNet  as backbone and adopts simple multi-scale fusion as multi-task decoders to predict height, magnitude, angle, and scale simultaneously. To handle the height variance, we first pretrained the model on all four cities and then transfered the pretrained model to each specific city for better city-wise performance. |
+| vecxoz       | 0.852948     | 0.851828      | {model explanation}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+
+
+
 
 
