@@ -1,4 +1,4 @@
-# Geopose Challenge 2nd place solution
+# Geopose Challenge 1st place solution
 
 
 ## Overview
