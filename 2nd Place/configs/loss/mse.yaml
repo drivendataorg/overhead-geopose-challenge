@@ -1,0 +1,26 @@
+aggregation: sum
+losses:
+  - loss:
+      _target_: geopose.losses.MSELossWithIgnore
+      ignore_value: 65535 # AGL_IGNORE_VALUE
+    prefix: height
+    target_key: TARGET_AGL_MASK
+    output_key: OUTPUT_AGL_MASK
+    weight: 1.0
+
+  - loss:
+      _target_: geopose.losses.MSELossWithIgnore
+      ignore_value: 65535 # AGL_IGNORE_VALUE
+    prefix: mag
+    target_key: TARGET_MAGNITUDE_MASK
+    output_key: OUTPUT_MAGNITUDE_MASK
+    weight: 1.0
+
+  - loss:
+      _target_: torch.nn.MSELoss
+    prefix: angle
+    target_key: TARGET_VFLOW_DIRECTION
+    output_key: OUTPUT_VFLOW_DIRECTION
+    weight: 5.0
+
+

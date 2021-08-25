@@ -1,0 +1,28 @@
+epochs: 250
+early_stopping: 0
+
+show: True
+fast: False
+
+augmentations: medium
+copy_paste: False
+
+train_image_size: [768, 768]
+valid_image_size: [2048, 2048]
+
+downsample: 1
+
+mosaic: False
+
+mixup: False
+mixup_a: 0.5
+mixup_p: 0.5
+
+loaders:
+  train:
+    batch_size: ${batch_size}
+    num_workers: 8
+
+  valid:
+    batch_size: 1
+    num_workers: 4

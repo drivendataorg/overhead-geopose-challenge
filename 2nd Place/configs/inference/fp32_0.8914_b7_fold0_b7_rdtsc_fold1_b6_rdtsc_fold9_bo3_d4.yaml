@@ -1,0 +1,24 @@
+# 0.9202 Private
+# 0.9183 Public
+ensemble:
+  tta: d4
+  tta_mode: ensemble
+  models:
+    - https://github.com/BloodAxe/DrivenData-2021-Geopose-Solution/releases/download/1.0/210709_07_54_b7_unet_fold0_train.195.pth
+    - https://github.com/BloodAxe/DrivenData-2021-Geopose-Solution/releases/download/1.0/210709_07_54_b7_unet_fold0_train.219.pth
+    - https://github.com/BloodAxe/DrivenData-2021-Geopose-Solution/releases/download/1.0/210709_07_54_b7_unet_fold0_train.220.pth
+
+    - https://github.com/BloodAxe/DrivenData-2021-Geopose-Solution/releases/download/1.0/210715_01_21_b7_rdtsc_unet_fold1_train.290.pth
+    - https://github.com/BloodAxe/DrivenData-2021-Geopose-Solution/releases/download/1.0/210715_01_21_b7_rdtsc_unet_fold1_train.297.pth
+    - https://github.com/BloodAxe/DrivenData-2021-Geopose-Solution/releases/download/1.0/210715_01_21_b7_rdtsc_unet_fold1_train.300.pth
+
+    - https://github.com/BloodAxe/DrivenData-2021-Geopose-Solution/releases/download/1.0/210714_15_13_b6_rdtsc_unet_fold9_train.251.pth
+    - https://github.com/BloodAxe/DrivenData-2021-Geopose-Solution/releases/download/1.0/210714_15_13_b6_rdtsc_unet_fold9_train.260.pth
+    - https://github.com/BloodAxe/DrivenData-2021-Geopose-Solution/releases/download/1.0/210714_15_13_b6_rdtsc_unet_fold9_train.269.pth
+
+inference:
+  batch_size: 1
+  num_workers: 4
+  fp16: False
+
+submission_dir: submissions/fp32_b7_fold0_b7_rdtsc_fold1_b6_rdtsc_fold9_bo3_d4

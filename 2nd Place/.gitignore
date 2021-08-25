@@ -1,0 +1,12 @@
+.env
+.idea/
+.pytest_cache/
+/evaluations/
+/experiments/
+/logs/
+/models/
+/old_runs/
+/runs/
+__pycache__/
+train.log
+/submissions/

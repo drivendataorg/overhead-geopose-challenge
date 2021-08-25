@@ -1,0 +1,39 @@
+defaults:
+  - loss: mse_cos
+  - model: r50_unet
+  - optimizer: adamw
+  - scheduler: cos
+  - dataset: default
+  - sampling: default
+  - train: safe_1024
+  - runner: default
+
+batch_size: 4
+
+channels_last: False
+
+# DDP Stuff
+local_rank: ${oc.env:LOCAL_RANK, 0}
+world_size: ${oc.env:WORLD_SIZE, 0}
+
+# Name of the experiment
+experiment: null
+
+seed: 42
+
+deterministic: False
+detect_anomaly: False
+find_unused: False
+
+transfer: null
+transfer_encoder_decoder: null
+checkpoint: null
+
+# Hydra stuff
+hydra:
+  output_subdir: null # Disable saving of config files. We'll do that ourselves.
+  run:
+    dir: . # Set working dir to current directory
+  sweep:
+    dir: .
+    subdir: .

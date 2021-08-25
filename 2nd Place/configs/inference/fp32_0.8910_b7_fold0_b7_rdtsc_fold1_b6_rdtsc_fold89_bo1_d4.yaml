@@ -1,0 +1,21 @@
+# Public 0.8896
+# Private 0.8910
+ensemble:
+  tta: d4
+  tta_mode: model
+  models:
+#    - models/210709_07_54_b7_unet_fold0/checkpoints_metrics_mean_r2/best.pth
+#    - models/210715_01_21_b7_rdtsc_unet_fold1/checkpoints_metrics_mean_r2/best.pth
+#    - models/210717_03_07_b6_rdtsc_unet_fold8/checkpoints_metrics_mean_r2/best.pth
+#    - models/210714_15_13_b6_rdtsc_unet_fold9/checkpoints_metrics_mean_r2/best.pth
+    - https://github.com/BloodAxe/DrivenData-2021-Geopose-Solution/releases/download/1.0/210709_07_54_b7_unet_fold0_best.pth
+    - https://github.com/BloodAxe/DrivenData-2021-Geopose-Solution/releases/download/1.0/210715_01_21_b7_rdtsc_unet_fold1_best.pth
+    - https://github.com/BloodAxe/DrivenData-2021-Geopose-Solution/releases/download/1.0/210717_03_07_b6_rdtsc_unet_fold8_best.pth
+    - https://github.com/BloodAxe/DrivenData-2021-Geopose-Solution/releases/download/1.0/210714_15_13_b6_rdtsc_unet_fold9_best.pth
+
+inference:
+  batch_size: 1
+  num_workers: 4
+  fp16: False
+
+submission_dir: submissions/fp32_b7_fold0_b7_rdtsc_fold1_b6_rdtsc_fold89_bo1_d4

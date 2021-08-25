@@ -1,0 +1,5 @@
+slug: default
+data_dir: ${oc.env:DRIVENDATA_OVERHEAD_GEOPOSE, "c:\datasets\geopose"}
+
+fold_split: region_stratified
+fold: 0

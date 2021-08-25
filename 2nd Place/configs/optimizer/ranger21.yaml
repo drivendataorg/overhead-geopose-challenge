@@ -1,0 +1,7 @@
+fp16: True
+name: ranger21
+params:
+  lr: 3e-4
+  use_madgrad: True
+  weight_decay: 1e-4
+  eps: 1e-6

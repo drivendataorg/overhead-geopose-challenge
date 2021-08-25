@@ -1,0 +1,35 @@
+_target_: geopose.models.geopose_unet.GeoposeUNetModel.from_config
+config:
+  slug: b6_rdtsc_unet
+  activation: silu
+
+  encoder:
+    _target_: pytorch_toolbelt.modules.encoders.TimmB6Encoder
+    pretrained: True
+    activation: silu
+    layers:
+      - 1
+      - 2
+      - 3
+      - 4
+
+  decoder:
+    block_type: residual_unet
+    upsample: rdtsc
+    activation: silu
+    channels:
+      - 256
+      - 384
+      - 512
+
+  agl_head:
+    _target_: geopose.models.heads.AGLHead
+    num_upsample_blocks: 2
+    dropout_rate: 0.0
+    activation: silu
+
+  orientation_head:
+    _target_: geopose.models.heads.BasicOrientationHead
+    dropout_rate: 0.2
+    activation: silu
+

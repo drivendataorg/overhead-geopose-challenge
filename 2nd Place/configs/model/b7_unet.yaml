@@ -1,0 +1,36 @@
+_target_: geopose.models.geopose_unet.GeoposeUNetModel.from_config
+config:
+  slug: b7_unet
+  activation: silu
+
+  encoder:
+    _target_: pytorch_toolbelt.modules.encoders.TimmB7Encoder
+    pretrained: True
+    activation: silu
+    layers:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+
+  decoder:
+    block_type: unet
+    activation: silu
+    channels:
+      - 192
+      - 256
+      - 384
+      - 512
+
+  agl_head:
+    _target_: geopose.models.heads.SimpleAGLHead
+    embedding_size: 128
+    dropout_rate: 0.2
+    activation: silu
+
+  orientation_head:
+    _target_: geopose.models.heads.BasicOrientationHead
+    dropout_rate: 0.2
+    activation: silu
+

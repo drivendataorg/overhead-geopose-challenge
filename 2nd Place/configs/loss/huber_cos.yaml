@@ -1,0 +1,34 @@
+aggregation: sum
+losses:
+  - loss:
+      _target_: geopose.losses.HuberLossWithIgnore
+      ignore_value: 65535 # AGL_IGNORE_VALUE
+      delta: 5
+    prefix: agl_huber
+    target_key: TARGET_AGL_MASK
+    output_key: OUTPUT_AGL_MASK
+    weight: 1.0
+
+  - loss:
+      _target_: geopose.losses.HuberLossWithIgnore
+      ignore_value: 65535 # AGL_IGNORE_VALUE
+      delta: 10
+    prefix: mag_huber
+    target_key: TARGET_MAGNITUDE_MASK
+    output_key: OUTPUT_MAGNITUDE_MASK
+    weight: 1.0
+
+  - loss:
+      _target_: geopose.losses.CosineSimilarityLoss
+    prefix: angle_cos
+    target_key: TARGET_VFLOW_DIRECTION
+    output_key: OUTPUT_VFLOW_DIRECTION
+    weight: 1.0
+
+
+  - loss:
+      _target_: torch.nn.MSELoss
+    prefix: angle_mse
+    target_key: TARGET_VFLOW_DIRECTION
+    output_key: OUTPUT_VFLOW_DIRECTION
+    weight: 1.0
