@@ -10,8 +10,6 @@ Username: chuchu
 
 - lib: local package to help the model training
 
-- log: directory to trained model weights and logs, we have put our final trained model weights here.
-
 - module: implementation of the final model
 
 - scripts: many bash scripts for reproduction
