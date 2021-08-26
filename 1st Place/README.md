@@ -3,7 +3,7 @@
 
 ## Overview
 
-The solution is mostly based on [our CVPR EarthVision 2021 paper](https://arxiv.org/abs/2105.08229) and [our CVPR 2020 main conference paper](http://openaccess.thecvf.com/content_CVPR_2020/papers/Christie_Learning_Geocentric_Object_Pose_in_Oblique_Monocular_Images_CVPR_2020_paper.pdf):
+The solution is mostly based on the [CVPR EarthVision 2021 paper](https://arxiv.org/abs/2105.08229) and the [CVPR 2020 main conference paper](http://openaccess.thecvf.com/content_CVPR_2020/papers/Christie_Learning_Geocentric_Object_Pose_in_Oblique_Monocular_Images_CVPR_2020_paper.pdf):
 
 
 ## Dependencies
