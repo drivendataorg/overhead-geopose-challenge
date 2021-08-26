@@ -22,7 +22,7 @@ This repository contains code from winning competitors in the [Overhead Geopose 
 
 ### Prediction Contest
 
-All of the models below are based on the solution provided in the benchmark blog post: **["Overhead Geopose Challenge - Benchmark"](https://www.drivendata.co/blog/overhead-geopose-benchmark/)**
+All of the models below are based on the solution provided in the benchmark blog post: **["Overhead Geopose Challenge - Benchmark"](https://www.drivendata.co/blog/overhead-geopose-benchmark/)** Additional solution details can be found in the `reports` folder inside the directory for each submission.
 
 | Place | Team or User | Public Score | Private Score | Summary of Model                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ----- | ------------ | ------------ | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
