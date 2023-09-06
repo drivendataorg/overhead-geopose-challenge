@@ -4,7 +4,7 @@
 ![Banner Image](https://drivendata-public-assets.s3.amazonaws.com/geopose-homepage.png)
 <figcaption>Images shown are from the public <a href="https://ieee-dataport.org/open-access/urban-semantic-3d-dataset">Urban Semantic 3D Dataset</a>, provided courtesy of DigitalGlobe</figcaption>
 
-# <Overhead Geopose Challenge>
+# Overhead Geopose Challenge
 
 ## Goal of the Competition
 
@@ -14,7 +14,7 @@ In this challenge, participants made satellite imagery taken from a significant 
 
 ## What's in This Repository
 
-This repository contains code from winning competitors in the [Overhead Geopose Challenge](https://www.drivendata.org/competitions/78/overhead-geopose-challenge/).
+This repository contains code from winning competitors in the [Overhead Geopose Challenge](https://www.drivendata.org/competitions/78/overhead-geopose-challenge/). Code for all winning solutions are open source under the MIT License.
 
 **Winning code for other DrivenData competitions is available in the [competition-winners repository](https://github.com/drivendataorg/competition-winners).**
 
